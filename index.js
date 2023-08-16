@@ -42,6 +42,7 @@ class Book {
 }
 saveBtn.onclick = () => {
   saveBook();
+  console.log(books);
 };
 function saveBook() {
   const title = document.getElementById("title").value;
@@ -52,6 +53,14 @@ function saveBook() {
   const book = new Book(title, author, publicationYear, genre);
   books.push(book);
   displayBook();
-  resetModal();
+  // resetModal();
   closeModal();
+}
+
+function displayBook() {
+  books.forEach((book) => {
+    const bookItem = document.createElement("div");
+    bookItem.innerHTML = `Title: ${book.title}<br>Author: ${book.author}<br> Publication Year: ${book.publicationYear}<br>Genre:${book.genre}`;
+    bookList.appendChild(bookItem);
+  });
 }
