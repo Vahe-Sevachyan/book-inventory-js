@@ -55,19 +55,29 @@ function saveBook() {
   const genre = document.getElementById("genre").value;
   const book = new Book(title, author, publicationYear, genre);
   books.push(book);
-  displayBook();
-  // resetModal();
+  displayBooks();
+
   closeModal();
 }
-console.log("index.js");
-function displayBook() {
-  // bookList.innerHTML = "";
+function removeBook(index) {
+  books.splice(index, 1);
+  displayBooks();
+}
+function displayBooks() {
+  bookList.innerHTML = "";
   books.forEach((book) => {
-    console.log(book.getBookInfo());
     const bookInfo = book.getBookInfo();
     const bookItem = document.createElement("div");
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = "Remove";
+    removeBtn.classList.add("remove-btn");
+    bookItem.classList.add("book-item");
     bookItem.innerHTML = bookInfo;
     bookList.appendChild(bookItem);
-    // console.log(bookInfo);
+    bookList.appendChild(removeBtn);
+    removeBtn.onclick = (e) => {
+      e.target.splice(index, 1);
+      displayBook();
+    };
   });
 }

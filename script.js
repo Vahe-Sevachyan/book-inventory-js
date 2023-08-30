@@ -39,7 +39,7 @@ function saveBook() {
   closeModal();
 }
 function displayBook() {
-  // bookList.innerHTML = "";
+  bookList.innerHTML = "";
   books.forEach((book) => {
     console.log(book.getBookInfo());
     const bookInfo = book.getBookInfo();
