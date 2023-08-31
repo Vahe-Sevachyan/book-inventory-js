@@ -53,14 +53,21 @@ html {
   margin: 0 10px 10px 0;
   min-width: 140px;
 }
-
-.removeBtn {
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin: auto;
+}
+.removeBtn,
+.read-book-btn {
   margin-top: 5px;
   padding: 7px;
   width: 90px;
   display: flex;
   justify-content: center;
 }
+
 .form-group {
   margin-bottom: 15px;
 }

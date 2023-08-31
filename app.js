@@ -62,11 +62,19 @@ function displayBooks() {
     const bookInfo = book.getBookInfo();
     const bookItem = document.createElement("div");
     const removeBtn = document.createElement("button");
+    const readBtn = document.createElement("button");
+    const btnContainer = document.createElement("div");
+    btnContainer.classList = "btn-container";
+    readBtn.innerHTML = "Read Book";
+    readBtn.classList = "read-book-btn";
     removeBtn.innerHTML = "Remove";
     removeBtn.classList = "removeBtn";
     bookItem.classList = "bookItem";
     bookItem.innerHTML = bookInfo;
-    bookItem.appendChild(removeBtn);
+    btnContainer.appendChild(readBtn);
+    btnContainer.appendChild(removeBtn);
+    bookItem.appendChild(btnContainer);
+
     bookList.appendChild(bookItem);
     removeBtn.onclick = (index) => {
       books.splice(index, 1);
