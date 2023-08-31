@@ -1,4 +1,7 @@
 /* Modal Styles */
+html {
+  font-family: poppins, "Courier New", Courier, monospace;
+}
 .modal {
   display: none;
   position: fixed;
@@ -18,9 +21,46 @@
   border: 1px solid #888;
   width: 80%;
   max-width: 500px;
+  border-radius: 15px;
 }
 
+.modal-header-container {
+  width: 200px;
+  border: 1px red dotted;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.create-book-btn {
+  width: 80%;
+}
+.container {
+  width: 98%;
+  margin: auto;
+}
 /* Form Styles */
+.bookItem {
+  padding: 10px;
+  background-color: lightgrey;
+  /* width: auto; */
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  overflow: auto;
+  margin: 0 10px 10px 0;
+  min-width: 140px;
+}
+
+.removeBtn {
+  margin-top: 5px;
+  padding: 7px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+}
 .form-group {
   margin-bottom: 15px;
 }
@@ -30,19 +70,18 @@ label {
   font-weight: bold;
 }
 
-input[type="text"] {
-  width: 100%;
+input {
+  width: 95%;
   padding: 5px;
 }
-
 button {
   padding: 10px 15px;
-  background-color: #4caf50;
+  background-color: #4c82af;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #45739a;
 }

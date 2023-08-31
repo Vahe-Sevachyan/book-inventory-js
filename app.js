@@ -1,4 +1,4 @@
-const addBook = document.querySelector(".createBook");
+const addBook = document.querySelector(".create-book-btn");
 const saveBook = document.querySelector(".saveBtn");
 const closeBtn = document.querySelector(".closeBtn");
 const bookModal = document.querySelector("#bookModal");
