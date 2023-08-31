@@ -3,6 +3,7 @@ const saveBook = document.querySelector(".saveBtn");
 const closeBtn = document.querySelector(".closeBtn");
 const bookModal = document.querySelector("#bookModal");
 const bookList = document.querySelector(".bookList");
+const removeBtn = document.querySelector(".removeBtn");
 const books = [];
 
 function displayModal() {
@@ -41,7 +42,7 @@ class Book {
     return genre;
   }
   getBookInfo() {
-    return `Title:${this.title}<br> Author:${this.author}<br>Publisher:${this.publisher}<br>${this.publisher}Genre:${this.genre}<br>`;
+    return `Title: ${this.title}<br> Author: ${this.author}<br>Publisher: ${this.publisher}<br>Genre: ${this.genre}<br>`;
   }
 }
 
@@ -52,10 +53,10 @@ function createBook() {
   const genre = document.getElementById("genre").value;
   const book = new Book(title, author, publicationYear, genre);
   books.push(book);
-  displayBook();
+  displayBooks();
   resetModal();
 }
-function displayBook() {
+function displayBooks() {
   bookList.innerHTML = "";
   books.forEach((book) => {
     const bookInfo = book.getBookInfo();
@@ -67,9 +68,14 @@ function displayBook() {
     bookItem.innerHTML = bookInfo;
     bookItem.appendChild(removeBtn);
     bookList.appendChild(bookItem);
+    removeBtn.onclick = (index) => {
+      books.splice(index, 1);
+      displayBooks();
+    };
     closeBookModal();
   });
 }
+
 function resetModal() {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
