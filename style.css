@@ -13,29 +13,40 @@ html {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+.login-btn {
+  height: 40px;
+  width: 90px;
+}
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   width: 80%;
   max-width: 500px;
   border-radius: 15px;
 }
-
-.modal-header-container {
-  width: 200px;
-  border: 1px red dotted;
+.header-section {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+/* .header-container {
+  background-color: #e5e0e0;
+  width: 100vw;
+} */
+.create-book-btn {
   margin: auto;
   justify-content: center;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-}
-.create-book-btn {
+  margin-top: 20px;
+  display: flex;
   width: 80%;
+  border-radius: 5px;
+  width: 200px;
 }
 .container {
   width: 98%;
@@ -44,7 +55,7 @@ html {
 /* Form Styles */
 .bookItem {
   padding: 10px;
-  background-color: lightgrey;
+  background-color: #d3cfcf;
   /* width: auto; */
   border-radius: 5px;
   margin-bottom: 5px;
@@ -66,8 +77,11 @@ html {
   width: 90px;
   display: flex;
   justify-content: center;
+  border-radius: 5px;
 }
-
+.read-book-btn:hover {
+  opacity: 0.8;
+}
 .form-group {
   margin-bottom: 15px;
 }
@@ -87,6 +101,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {

@@ -65,8 +65,9 @@ function displayBooks() {
     const readBtn = document.createElement("button");
     const btnContainer = document.createElement("div");
     btnContainer.classList = "btn-container";
-    readBtn.innerHTML = "Read Book";
+    readBtn.innerHTML = "Not Read";
     readBtn.classList = "read-book-btn";
+    readBtn.style.backgroundColor = "red";
     removeBtn.innerHTML = "Remove";
     removeBtn.classList = "removeBtn";
     bookItem.classList = "bookItem";
@@ -74,11 +75,21 @@ function displayBooks() {
     btnContainer.appendChild(readBtn);
     btnContainer.appendChild(removeBtn);
     bookItem.appendChild(btnContainer);
-
     bookList.appendChild(bookItem);
     removeBtn.onclick = (index) => {
       books.splice(index, 1);
       displayBooks();
+    };
+    readBtn.onclick = () => {
+      if (readBtn.style.backgroundColor === "red") {
+        readBtn.style.backgroundColor = "green";
+        readBtn.innerHTML = "Read Book";
+        bookItem.style.backgroundColor = "#e2f2f3";
+      } else if (readBtn.style.backgroundColor === "green") {
+        readBtn.style.backgroundColor = "red";
+        bookItem.style.backgroundColor = "#D3CFCF";
+        readBtn.innerHTML = "Not Read";
+      }
     };
     closeBookModal();
   });
