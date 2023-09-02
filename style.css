@@ -25,6 +25,7 @@ html {
   width: 80%;
   max-width: 500px;
   border-radius: 15px;
+  /* transform: translate(-50%, -50%); */
 }
 .header-section {
   width: 90vw;
@@ -33,10 +34,7 @@ html {
   align-items: center;
   margin: auto;
 }
-/* .header-container {
-  background-color: #e5e0e0;
-  width: 100vw;
-} */
+
 .create-book-btn {
   margin: auto;
   justify-content: center;
@@ -106,4 +104,7 @@ button {
 
 button:hover {
   background-color: #45739a;
+}
+body {
+  background-color: rgb(198, 198, 212);
 }

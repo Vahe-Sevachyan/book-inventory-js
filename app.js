@@ -22,6 +22,11 @@ saveBook.onclick = () => {
   createBook();
 };
 
+window.addEventListener("click", (event) => {
+  if (event.target === bookModal) {
+    closeBookModal();
+  }
+});
 class Book {
   constructor(title, author, publicationYear, genre) {
     this.title = title;
